@@ -1,4 +1,4 @@
-# sacpy — Framework unificado para análise SAC-DM / SAC-AM
+# Sacpy — Framework unificado para análise SAC-DM / SAC-AM
 
 Biblioteca em Python para análise de sinais caóticos com base nas técnicas **SAC-DM** (*Signal Analysis based on Chaos using Density of Maxima*) e **SAC-AM** (*Signal Analysis based on Chaos using Amplitude of Maxima*), incluindo testes de validação de caos, geradores de sinais sintéticos canônicos e ferramentas de análise de sensibilidade.
 
@@ -14,7 +14,6 @@ Este projeto preenche a lacuna de **reprodutibilidade computacional** dos fundam
 
 ## Sumário
 
-- [Origem e contexto](#origem-e-contexto)
 - [Instalação](#instalação)
 - [Uso rápido](#uso-rápido)
 - [Referência da API](#referência-da-api)
@@ -27,41 +26,8 @@ Este projeto preenche a lacuna de **reprodutibilidade computacional** dos fundam
 - [Estrutura do repositório](#estrutura-do-repositório)
 - [Resultados esperados](#resultados-esperados)
 - [Reprodutibilidade](#reprodutibilidade)
-- [Referências](#referências)
-- [Licença](#licença)
 
 ---
-
-## Origem e contexto
-
-O SAC-DM foi proposto originalmente por **Bazeia et al. (2017, *Scientific Reports*)** no contexto de física estatística e ecologia teórica, como estimador do comprimento de correlação em simulações estocásticas de competição de espécies. A densidade de máximos escala com a raiz do expoente de Lyapunov médio:
-
-$$
-\rho \;\propto\; \sqrt{\langle \lambda \rangle}
-$$
-
-A técnica foi posteriormente levada à engenharia por **Medeiros et al. (2018, *Drones*; 2019, *IEEE TIE*)**, que consolidaram formalmente o **SAC-DM** e o **SAC-AM** como ferramentas de diagnóstico de falhas em máquinas elétricas. A partir de 2019, a técnica ramificou-se para rolamentos, barras quebradas, VANTs, falhas de ignição, estimação *sensorless* e condicionadores de ar.
-
-O `sacpy` reconstrói essa trajetória em código aberto, documentando cada decisão de implementação de forma auditável.
-
-### Definições formais
-
-**SAC-DM** — densidade de máximos por unidade de tempo (Hz):
-
-$$
-D = \frac{|M|}{T}, \qquad T = \frac{N}{f_s}
-$$
-
-**SAC-AM** — amplitude média dos máximos locais:
-
-$$
-A = \frac{1}{|M|}\sum_{m \in M} |x[m]|
-$$
-
-**Propriedades:**
-- $D$ é invariante a transformações afins com ganho positivo ($y = \alpha x + \beta$, $\alpha > 0$);
-- $D$ captura mudanças de dinâmica; $A$ captura mudanças de energia/severidade.
-
 ---
 
 ## Instalação
@@ -284,21 +250,6 @@ A rotina `python sacpy.py` executa `_demo_graficos()` e produz quatro painéis:
 
 ---
 
-## Estrutura do repositório
-
-```
-biblio-sac/
-├── sacpy.py               # Módulo principal (autocontido)
-├── sacpy_dashboard.png    # Gerado por `python sacpy.py`
-├── sacpy_snr.png          # Gerado por `python sacpy.py`
-├── sacpy_window.png       # Gerado por `python sacpy.py`
-├── sacpy_test01.png       # Gerado por `python sacpy.py`
-├── apresentacao.tex       # Slides Beamer da apresentação
-└── README.md              # Este arquivo
-```
-
----
-
 ## Resultados esperados
 
 Validação sintética sobre cinco sistemas canônicos (valores típicos):
@@ -345,23 +296,6 @@ sp.sensitivity_window(sp.lorenz(T=30, fs=200), fs=200)
 
 A rotina `python sacpy.py` gera automaticamente o painel de demonstração completo.
 
----
-
-## Referências
-
-1. **Bazeia, D. et al.** *Density of maxima and correlation length in stochastic simulations of species competition*. Scientific Reports, 2017.
-2. **Medeiros, R. L. P. et al.** *A novel approach for failure diagnosis in BLDC motors based on chaos*. Drones, 2018.
-3. **Medeiros, R. L. P. et al.** *Signal Analysis based on Chaos using Density of Maxima and Amplitude of Maxima*. IEEE Transactions on Industrial Electronics, 2019.
-4. **Gottwald, G. A.; Melbourne, I.** *On the implementation of the 0-1 test for chaos*. SIAM J. Appl. Dyn. Syst., v. 8, n. 1, p. 129–145, 2009. DOI: [10.1137/080718851](https://doi.org/10.1137/080718851).
-5. **Kulp, C. W.; Smith, S.** *Characterization of noisy symbolic time series*. Phys. Rev. E, v. 83, n. 2, 2011.
-6. **Lucena-Junior, J. A. et al.** *Bearing fault diagnosis using sound and SAC-DM/SAC-AM*. 2020.
-7. **Strogatz, S. H.** *Nonlinear Dynamics and Chaos*. 2. ed. CRC Press, 2018.
-
----
-
-## Licença
-
-Este projeto é disponibilizado sob a **Licença MIT**. Consulte o arquivo `LICENSE` para os termos completos.
 
 ---
 
