@@ -1,4 +1,4 @@
-# Sacpy — Framework unificado para análise SAC-DM / SAC-AM
+# Sacpy
 
 Biblioteca em Python para análise de sinais caóticos com base nas técnicas **SAC-DM** (*Signal Analysis based on Chaos using Density of Maxima*) e **SAC-AM** (*Signal Analysis based on Chaos using Amplitude of Maxima*), incluindo testes de validação de caos, geradores de sinais sintéticos canônicos e ferramentas de análise de sensibilidade.
 
@@ -23,7 +23,6 @@ Este projeto preenche a lacuna de **reprodutibilidade computacional** dos fundam
   - [4. Geradores de sinais](#4-geradores-de-sinais)
   - [5. Análise de sensibilidade](#5-análise-de-sensibilidade)
 - [Demonstração gráfica](#demonstração-gráfica)
-- [Estrutura do repositório](#estrutura-do-repositório)
 - [Resultados esperados](#resultados-esperados)
 - [Reprodutibilidade](#reprodutibilidade)
 
