@@ -48,7 +48,6 @@ pip install numpy scipy matplotlib
 
 ```bash
 git clone https://github.com/joaoopedrr/biblio-sac.git
-cd biblio-sac
 ```
 
 O `sacpy.py` é um módulo autocontido; basta colocá-lo no mesmo diretório do seu script ou adicioná-lo ao `PYTHONPATH`.
